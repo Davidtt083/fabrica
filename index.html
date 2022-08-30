@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>AR - UniAndes</title>
+    <title>AR</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
@@ -180,6 +180,7 @@ setTimeout(() => {
       gesture-detector
       id="scene"
       loading-screen="dotsColor: red; backgroundColor: black"
+      shadow="autoUpdate: true"
     >
       <a-assets>
         <a-asset-item
@@ -249,7 +250,8 @@ setTimeout(() => {
         id="markerA"
       >
       
-      <a-entity light="type: ambient; color: #CCC; intensity: 0.7"></a-entity>
+      <a-entity light="type: ambient; color: #CCC; intensity: 0.8"></a-entity> 
+      <a-entity light="type: directional; castShadow:true; color: #EEE; intensity: 0.5" position="0 0.5 0"></a-entity>
       <a-entity light="type: point; intensity: 0.7; distance: 70; decay: 10"
       position="-2 0.5 0"></a-entity>
       <a-entity light="type: point; intensity: 0.7; distance: 70; decay: 10"
@@ -264,7 +266,9 @@ setTimeout(() => {
           scale="0.1 0.1 0.1"
           class="clickable"
           gesture-handler
-          visible="true"   
+          visible="true" 
+          animation-mixer 
+          shadow="receive: true; cast: true;"
             
         >
       </a-entity>
